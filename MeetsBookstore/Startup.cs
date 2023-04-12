@@ -63,7 +63,7 @@ namespace MeetsBookstore
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"); //Default rout Pattern.
+                    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}"); //Default rout Pattern.
                 endpoints.MapRazorPages();
             });
         }
