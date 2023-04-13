@@ -1,4 +1,6 @@
 
+using MeetsBooks.DataAccess.Repository.IRepository;
+using MeetsBooks.DataAccess.Repository;
 using MeetsBookstore.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +35,8 @@ namespace MeetsBookstore
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>() //options => options.SignIn.RequireConfirmedAccount = true
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
