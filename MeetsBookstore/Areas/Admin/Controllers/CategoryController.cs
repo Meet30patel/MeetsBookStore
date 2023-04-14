@@ -25,7 +25,7 @@ namespace MeetsBookstore.Areas.Admin.Controllers
             Category category = new Category();
             if (id == null)
             {
-                //this is for create
+                
                 return View(category);
             }
             category = _unitOfWork.Category.Get(id.GetValueOrDefault());
@@ -33,7 +33,7 @@ namespace MeetsBookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            return View(category); //remember
+            return View(category);
         }
 
         [HttpPost]
@@ -60,7 +60,7 @@ namespace MeetsBookstore.Areas.Admin.Controllers
             return View(category);
         }
 
-        //API calls here
+      
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
