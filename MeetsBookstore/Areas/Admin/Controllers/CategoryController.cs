@@ -65,7 +65,6 @@ namespace MeetsBookstore.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            //return NotFound();
             var allObj = _unitOfWork.Category.GetAll();
             return Json(new { data = allObj });
         }

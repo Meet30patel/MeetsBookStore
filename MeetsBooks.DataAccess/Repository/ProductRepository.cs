@@ -1,4 +1,5 @@
-﻿using MeetsBooks.Models;
+﻿using MeetsBooks.DataAccess.Repository.IRepository;
+using MeetsBooks.Models;
 using MeetsBookstore.DataAccess.Data;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace MeetsBooks.DataAccess.Repository
 {
-    public class ProductRepository : Repository<Product>
+    public class ProductRepository : Repository<Product> , IProductRepository
     {
         private readonly ApplicationDbContext _db;
         public ProductRepository(ApplicationDbContext db) : base(db)
